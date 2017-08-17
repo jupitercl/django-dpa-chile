@@ -38,7 +38,7 @@ class Command(BaseCommand):
 
                 obj, created = Region.objects.update_or_create(
                     codigo=region.codigo, defaults=fields)
-                obj.save()
+
                 self.provincia(obj, http)
             except Exception as e:
                 raise CommandError('Fail populate - Exception: {}'.format(e))
@@ -64,10 +64,10 @@ class Command(BaseCommand):
 
                 obj, created = Provincia.objects.update_or_create(
                     codigo=provincia.codigo, defaults=fields)
-                obj.save()
+
                 self.comunas(obj, http)
-            except:
-                raise CommandError('Fail populate provincia: {}'.format(provincia))
+            except Exception as e:
+                raise CommandError('Fail populate - Exception: {}'.format(e))
 
     def comunas(self, provincia, http):
         c = http.request(
@@ -88,6 +88,6 @@ class Command(BaseCommand):
 
                 obj, created = Comuna.objects.update_or_create(
                     codigo=comuna.codigo, defaults=fields)
-                obj.save()
-            except:
-                raise CommandError('Fail populate comuna: {}'.format(comuna))
+
+            except Exception as e:
+                raise CommandError('Fail populate - Exception: {}'.format(e))
