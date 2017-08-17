@@ -9,7 +9,7 @@ class Region(models.Model):
     """
     Region object
     """
-    codigo = models.CharField(max_length=10, primary_key=True)
+    codigo = models.CharField(max_length=10)
     tipo = models.CharField(max_length=10)
     nombre = models.CharField(max_length=255)
     lat = models.CharField(max_length=50)
@@ -25,7 +25,7 @@ class Provincia(models.Model):
     """
     Provincia object
     """
-    codigo = models.CharField(max_length=10, primary_key=True)
+    codigo = models.CharField(max_length=10)
     tipo = models.CharField(max_length=10)
     nombre = models.CharField(max_length=255)
     lat = models.CharField(max_length=50)
@@ -42,7 +42,7 @@ class Comuna(models.Model):
     """
     Comuna object
     """
-    codigo = models.CharField(max_length=10, primary_key=True)
+    codigo = models.CharField(max_length=10)
     tipo = models.CharField(max_length=10)
     nombre = models.CharField(max_length=255)
     lat = models.CharField(max_length=50)
