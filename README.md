@@ -37,6 +37,8 @@ Populate
 --------
 
 ```sh
+python manage.py migrate django_dpa_chile
+
 python manage.py populate_dpa_chile
 ```
 
