@@ -1,10 +1,8 @@
 # django-dpa-chile
-
-<!-- [![Build Status][travis-image]][travis-url]
-[![Coverage percentage][coveralls-image]][coveralls-url]
-[![PyPI status][pypi-image]][pypi-url] -->
-
-> Political-Administrative Division of Chile
+###Political-Administrative Division of Chile
+### Regiones - Provincias - Comunas
+Information obtained from the api of Modernization and Digital Government Unit
+https://apis.digital.gob.cl/dpa
 
 ## Installation
 
@@ -29,13 +27,14 @@ INSTALLED_APPS =[
 # ...
 ```
 
-## [License](LICENSE)
+## Populate
 
-Francisco Jordan &lt;franciscojordan@live.com&gt;
+```sh
+python manage.py populate_dpa_chile
+```
 
-<!-- [travis-image]: https://travis-ci.org/jupitercl/django-dpa-chile.svg?branch=master
-[travis-url]: https://travis-ci.org/jupitercl/django-dpa-chile
-[coveralls-image]: https://coveralls.io/repos/jupitercl/django-dpa-chile/badge.svg
-[coveralls-url]: https://coveralls.io/r/jupitercl/django-dpa-chile
-[pypi-image]: https://img.shields.io/pypi/v/django-dpa-chile.svg -->
-[pypi-url]: https://pypi.python.org/pypi/django-dpa-chile/
+## Use
+
+```python
+from django_dpa_chile.models import Region, Provincia, Comuna
+```
