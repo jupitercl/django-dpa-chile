@@ -27,7 +27,7 @@ settings.py
 
 INSTALLED_APPS =[
   ...
-  'django_dpa_chile'
+  'django_dpa_chile',
   ]
 
 # ...

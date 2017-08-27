@@ -84,6 +84,7 @@ class Command(BaseCommand):
                           'lat': str(comuna.lat),
                           'lng': str(comuna.lng),
                           'url': comuna.url,
+                          'region': provincia.region,
                           'provincia': provincia}
 
                 obj, created = Comuna.objects.update_or_create(
