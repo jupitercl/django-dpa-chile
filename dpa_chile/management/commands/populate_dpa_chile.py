@@ -4,7 +4,7 @@ import urllib3
 import json
 from bunch import bunchify
 from django.core.management.base import BaseCommand, CommandError
-from django_dpa_chile.models import Region, Provincia, Comuna
+from dpa_chile.models import Region, Provincia, Comuna
 
 safe_ascci = {'\xc1': 'Á', '\xc9': 'É', '\xcd': 'Í', '\xd3': 'Ó', '\xda': 'Ú',
               '\xdc': 'U', '\xd1': 'Ñ', '\xc7': 'C', '\xed': 'i', '\xf3': 'o',
