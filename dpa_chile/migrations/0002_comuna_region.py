@@ -9,14 +9,14 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('django_dpa_chile', '0001_initial'),
+        ('dpa_chile', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
             model_name='comuna',
             name='region',
-            field=models.ForeignKey(default=None, on_delete=django.db.models.deletion.CASCADE, to='django_dpa_chile.Region'),
+            field=models.ForeignKey(default=None, on_delete=django.db.models.deletion.CASCADE, to='dpa_chile.Region'),
             preserve_default=False,
         ),
     ]

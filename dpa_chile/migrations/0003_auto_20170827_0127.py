@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('django_dpa_chile', '0002_comuna_region'),
+        ('dpa_chile', '0002_comuna_region'),
     ]
 
     operations = [

@@ -53,11 +53,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='provincia',
             name='region',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='django_dpa_chile.Region'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dpa_chile.Region'),
         ),
         migrations.AddField(
             model_name='comuna',
             name='provincia',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='django_dpa_chile.Provincia'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dpa_chile.Provincia'),
         ),
     ]
