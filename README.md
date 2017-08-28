@@ -8,6 +8,20 @@ Information obtained from the api of Modernization and Digital Government Unit
 
 https://apis.digital.gob.cl/dpa
 
+Pypi
+====
+
+https://pypi.python.org/pypi/django-dpa-chile
+
+IMPORT REMOVE OLD VERSION <= 2.0.5
+==================================
+
+Force remove foreign key
+
+    DROP TABLES django_dpa_region
+    DROP TABLES django_dpa_provincia
+    DROP TABLES django_dpa_comuna
+
 Installation
 ------------
 

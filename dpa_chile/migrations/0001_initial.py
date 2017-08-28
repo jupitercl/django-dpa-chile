@@ -17,8 +17,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Comuna',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('codigo', models.CharField(max_length=10)),
+                ('codigo', models.CharField(max_length=10, primary_key=True, serialize=False)),
                 ('tipo', models.CharField(max_length=10)),
                 ('nombre', models.CharField(max_length=255)),
                 ('lat', models.CharField(max_length=50)),
@@ -29,8 +28,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Provincia',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('codigo', models.CharField(max_length=10)),
+                ('codigo', models.CharField(max_length=10, primary_key=True, serialize=False)),
                 ('tipo', models.CharField(max_length=10)),
                 ('nombre', models.CharField(max_length=255)),
                 ('lat', models.CharField(max_length=50)),
@@ -41,8 +39,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Region',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('codigo', models.CharField(max_length=10)),
+                ('codigo', models.CharField(max_length=10, primary_key=True, serialize=False)),
                 ('tipo', models.CharField(max_length=10)),
                 ('nombre', models.CharField(max_length=255)),
                 ('lat', models.CharField(max_length=50)),
@@ -59,5 +56,11 @@ class Migration(migrations.Migration):
             model_name='comuna',
             name='provincia',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dpa_chile.Provincia'),
+        ),
+        migrations.AddField(
+            model_name='comuna',
+            name='region',
+            field=models.ForeignKey(default=None, on_delete=django.db.models.deletion.CASCADE, to='dpa_chile.Region'),
+            preserve_default=False,
         ),
     ]
