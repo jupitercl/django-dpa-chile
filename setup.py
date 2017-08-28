@@ -14,7 +14,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='2.0.2',
+    version='2.0.3',
 
     description='Political-Administrative Division of Chile',
     long_description=long_description,
@@ -49,10 +49,10 @@ setup(
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
     packages=[
-        'django_dpa_chile',
-        'django_dpa_chile.migrations',
-        'django_dpa_chile.management',
-        'django_dpa_chile.management.commands'],
+        'dpa_chile',
+        'dpa_chile.migrations',
+        'dpa_chile.management',
+        'dpa_chile.management.commands'],
 
     include_package_data=True,
 

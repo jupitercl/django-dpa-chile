@@ -13,38 +13,31 @@ Installation
 
 install **django-dpa-chile** using **pip**
 
-```sh
-pip install django-dpa-chile
-```
+
+    pip install django-dpa-chile
 
 add **dpa_chile** to **INSTALLED_APPS**
 
 settings.py
 -----------
 
-```python
-# ...
+    # ...
 
-INSTALLED_APPS =[
-  ...
-  'dpa_chile',
-  ]
+    INSTALLED_APPS =[
+    ...
+    'dpa_chile',
+    ]
 
-# ...
-```
+    # ...
 
 Populate
 --------
 
-```sh
-python manage.py migrate django_dpa_chile
+    python manage.py migrate django_dpa_chile
 
-python manage.py populate_dpa_chile
-```
+    python manage.py populate_dpa_chile
 
 Use
 ---
 
-```python
-from django_dpa_chile.models import Region, Provincia, Comuna
-```
+    from django_dpa_chile.models import Region, Provincia, Comuna
