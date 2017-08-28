@@ -14,10 +14,10 @@ Installation
 install **django-dpa-chile** using **pip**
 
 ```sh
-pip install -U django-dpa-chile
+pip install django-dpa-chile
 ```
 
-add **django_dpa_chile** to **INSTALLED_APPS**
+add **dpa_chile** to **INSTALLED_APPS**
 
 settings.py
 -----------
@@ -27,7 +27,7 @@ settings.py
 
 INSTALLED_APPS =[
   ...
-  'django_dpa_chile',
+  'dpa_chile',
   ]
 
 # ...
