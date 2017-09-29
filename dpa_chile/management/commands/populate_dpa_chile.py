@@ -28,7 +28,6 @@ class Command(BaseCommand):
         regiones = bunchify(j)
 
         for region in regiones:
-            self.stdout.write(self.style.SUCCESS('Region: {}'.format(region.nombre)))
             try:
                 fields = {'tipo': region.tipo,
                           'nombre': region.nombre,
@@ -38,6 +37,10 @@ class Command(BaseCommand):
 
                 obj, created = Region.objects.update_or_create(
                     codigo=region.codigo, defaults=fields)
+                if created:
+                    self.stdout.write(self.style.SUCCESS('Region: {} - Status: Created'.format(region.nombre)))
+                else:
+                    self.stdout.write(self.style.SUCCESS('Region: {} - Status: Updated'.format(region.nombre)))
 
                 self.provincia(obj, http)
             except Exception as e:
@@ -53,7 +56,6 @@ class Command(BaseCommand):
         j = json.loads(p.data)
         provincias = bunchify(j)
         for provincia in provincias:
-            self.stdout.write(self.style.SUCCESS('Provincia: {}'.format(provincia.nombre)))
             try:
                 fields = {'tipo': provincia.tipo,
                           'nombre': provincia.nombre,
@@ -64,6 +66,11 @@ class Command(BaseCommand):
 
                 obj, created = Provincia.objects.update_or_create(
                     codigo=provincia.codigo, defaults=fields)
+                
+                if created:
+                    self.stdout.write(self.style.SUCCESS('Provincia: {} - Status: Created'.format(provincia.nombre)))
+                else:
+                    self.stdout.write(self.style.SUCCESS('Provincia: {} - Status: Updated'.format(provincia.nombre)))
 
                 self.comunas(obj, http)
             except Exception as e:
@@ -77,7 +84,6 @@ class Command(BaseCommand):
         j = json.loads(c.data)
         comunas = bunchify(j)
         for comuna in comunas:
-            self.stdout.write(self.style.SUCCESS('Comuna: {}'.format(comuna.nombre)))
             try:
                 fields = {'tipo': comuna.tipo,
                           'nombre': comuna.nombre,
@@ -89,6 +95,11 @@ class Command(BaseCommand):
 
                 obj, created = Comuna.objects.update_or_create(
                     codigo=comuna.codigo, defaults=fields)
+                    
+                if created:
+                    self.stdout.write(self.style.SUCCESS('Comuna: {} - Status: Created'.format(comuna.nombre)))
+                else:
+                    self.stdout.write(self.style.SUCCESS('Comuna: {} - Status: Updated'.format(comuna.nombre)))
 
             except Exception as e:
                 raise CommandError('Fail populate - Exception: {}'.format(e))
